@@ -78,7 +78,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Particle1.h" />
+    <ClInclude Include="ParticleSinTest.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="PSO.h" />
   </ItemGroup>

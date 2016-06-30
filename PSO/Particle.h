@@ -23,7 +23,7 @@ public:
 	vector<float>& getFeatures();
 	float getFittnessVal();
 
-	virtual void update(vector<float>& gBest, vector<float>& lBest = vector<float>(), float c1 = 1, float  c2 = 1);
+	virtual void update(vector<float>& gBest, vector<float>& lBest = vector<float>(), float c1 = 1, float  c2 = 1,float  cN = 1);
 	virtual Particle* updateFittness() = 0; //return this
 	
 };

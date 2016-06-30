@@ -6,7 +6,7 @@ int main()
 {
 	ParticleType PType;
 	PType = Default;
-	PSO test(20,100,PType);
+	PSO test(5,1,PType);
 	
 	test.optimize(10);
 }

@@ -48,13 +48,15 @@ float Particle::getFittnessVal()
 }
 
 ////////////////////////Update//////////////////////////
-void Particle::update(vector<float>& gBest, vector<float>& lBest, float c1, float  c2)
+void Particle::update(vector<float>& gBest, vector<float>& lBest, float c1, float  c2,float cN)
 { 
 	int NOfFeatures = features.size();
+	vector<float> pBestF = pBest->getFeatures();
 	for (int i = 0; i < NOfFeatures; ++i)
 	{
 		velocity[i] += c1 *  (rand() / (float)RAND_MAX)* (gBest[i] - features[i])
-			+ (lBest.size() ? (c2 *  (rand() / (float)RAND_MAX)*(lBest[i] - features[i])) : 0);
+			+ c2 *  (rand() / (float)RAND_MAX)*(pBestF[i] - features[i])
+			+(lBest.size() ? (c2 *  (rand() / (float)RAND_MAX)*(lBest[i] - features[i])) : 0);
 		features[i] += velocity[i];
 		
 		velocity[i] = velocity[i]>maxVelocity[i] ? maxVelocity[i] : velocity[i];
