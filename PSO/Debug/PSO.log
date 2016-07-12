@@ -1,20 +1,24 @@
-﻿Build started 7/1/2016 1:29:37 AM.
-     1>Project "D:\CIS\Projects\PSO\ParticleSwarmOpt\PSO\PSO.vcxproj" on node 2 (Build target(s)).
+﻿Build started 7/12/2016 10:22:28 PM.
+     1>Project "D:\CIS\Projects\PSO\ParticleSwarmOpt-master\PSO\PSO.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PSO.cpp Particle.cpp
          Particle.cpp
+     1>d:\cis\projects\pso\particleswarmopt-master\pso\particle.cpp(75): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\cis\projects\pso\particleswarmopt-master\pso\particle.cpp(93): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\cis\projects\pso\particleswarmopt-master\pso\particle.cpp(94): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\cis\projects\pso\particleswarmopt-master\pso\particle.cpp(133): warning C4244: 'initializing' : conversion from 'unsigned int' to 'float', possible loss of data
          PSO.cpp
-     1>d:\cis\projects\pso\particleswarmopt\pso\particlesintest.h(14): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\cis\projects\pso\particleswarmopt\pso\pso.cpp(120): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\cis\projects\pso\particleswarmopt-master\pso\particlesintest.h(14): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\cis\projects\pso\particleswarmopt-master\pso\pso.cpp(120): warning C4018: '<' : signed/unsigned mismatch
      1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\utility(144): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-                 d:\cis\projects\pso\particleswarmopt\pso\pso.cpp(53) : see reference to function template instantiation 'std::pair<std::vector<float,std::allocator<_Ty>> &,float>::pair<std::vector<_Ty,std::allocator<_Ty>>,int,void>(_Other1 &&,_Other2 &&)' being compiled
+                 d:\cis\projects\pso\particleswarmopt-master\pso\pso.cpp(53) : see reference to function template instantiation 'std::pair<std::vector<float,std::allocator<_Ty>> &,float>::pair<std::vector<_Ty,std::allocator<_Ty>>,int,void>(_Other1 &&,_Other2 &&)' being compiled
                  with
                  [
                      _Ty=float
          ,            _Other1=std::vector<float,std::allocator<float>>
          ,            _Other2=int
                  ]
-                 d:\cis\projects\pso\particleswarmopt\pso\pso.cpp(53) : see reference to function template instantiation 'std::pair<std::vector<float,std::allocator<_Ty>> &,float>::pair<std::vector<_Ty,std::allocator<_Ty>>,int,void>(_Other1 &&,_Other2 &&)' being compiled
+                 d:\cis\projects\pso\particleswarmopt-master\pso\pso.cpp(53) : see reference to function template instantiation 'std::pair<std::vector<float,std::allocator<_Ty>> &,float>::pair<std::vector<_Ty,std::allocator<_Ty>>,int,void>(_Other1 &&,_Other2 &&)' being compiled
                  with
                  [
                      _Ty=float
@@ -22,8 +26,8 @@
          ,            _Other2=int
                  ]
      1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\utility(157): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-                 d:\cis\projects\pso\particleswarmopt\pso\pso.cpp(58) : see reference to function template instantiation 'std::pair<int,float>::pair<float,float,void>(std::pair<float,float> &&)' being compiled
-                 d:\cis\projects\pso\particleswarmopt\pso\pso.cpp(58) : see reference to function template instantiation 'std::pair<int,float>::pair<float,float,void>(std::pair<float,float> &&)' being compiled
+                 d:\cis\projects\pso\particleswarmopt-master\pso\pso.cpp(58) : see reference to function template instantiation 'std::pair<int,float>::pair<float,float,void>(std::pair<float,float> &&)' being compiled
+                 d:\cis\projects\pso\particleswarmopt-master\pso\pso.cpp(58) : see reference to function template instantiation 'std::pair<int,float>::pair<float,float,void>(std::pair<float,float> &&)' being compiled
      1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\utility(103): warning C4244: 'initializing' : conversion from 'const int' to 'float', possible loss of data
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\algorithm(3071) : see reference to function template instantiation 'std::pair<float,float>::pair<int,float,void>(const std::pair<int,float> &)' being compiled
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\algorithm(3071) : see reference to function template instantiation 'std::pair<float,float>::pair<int,float,void>(const std::pair<int,float> &)' being compiled
@@ -31,29 +35,29 @@
                  with
                  [
                      _RanIt=std::pair<int,float> *
-         ,            _Pr=PSO::getLocalBest::<lambda_ef0911f1fbbd0339aa447d71209e71b9>
+         ,            _Pr=PSO::getLocalBest::<lambda_89e8160f3e3eb385a92016edbd1fbf02>
                  ]
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\algorithm(3157) : see reference to function template instantiation 'void std::_Sort<std::pair<int,float>*,__w64 int,_Pr>(_RanIt,_RanIt,_Diff,_Pr)' being compiled
                  with
                  [
-                     _Pr=PSO::getLocalBest::<lambda_ef0911f1fbbd0339aa447d71209e71b9>
+                     _Pr=PSO::getLocalBest::<lambda_89e8160f3e3eb385a92016edbd1fbf02>
          ,            _RanIt=std::pair<int,float> *
          ,            _Diff=__w64 int
                  ]
-                 d:\cis\projects\pso\particleswarmopt\pso\pso.cpp(62) : see reference to function template instantiation 'void std::sort<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::pair<int,float>>>>,PSO::getLocalBest::<lambda_ef0911f1fbbd0339aa447d71209e71b9>>(_RanIt,_RanIt,_Pr)' being compiled
+                 d:\cis\projects\pso\particleswarmopt-master\pso\pso.cpp(62) : see reference to function template instantiation 'void std::sort<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::pair<int,float>>>>,PSO::getLocalBest::<lambda_89e8160f3e3eb385a92016edbd1fbf02>>(_RanIt,_RanIt,_Pr)' being compiled
                  with
                  [
                      _RanIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::pair<int,float>>>>
-         ,            _Pr=PSO::getLocalBest::<lambda_ef0911f1fbbd0339aa447d71209e71b9>
+         ,            _Pr=PSO::getLocalBest::<lambda_89e8160f3e3eb385a92016edbd1fbf02>
                  ]
          Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\CIS\Projects\PSO\ParticleSwarmOpt\Debug\PSO.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\CIS\Projects\PSO\ParticleSwarmOpt\Debug\PSO.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\CIS\Projects\PSO\ParticleSwarmOpt\Debug\PSO.lib" /MACHINE:X86 Debug\Particle.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\CIS\Projects\PSO\ParticleSwarmOpt-master\Debug\PSO.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\CIS\Projects\PSO\ParticleSwarmOpt-master\Debug\PSO.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\CIS\Projects\PSO\ParticleSwarmOpt-master\Debug\PSO.lib" /MACHINE:X86 Debug\Particle.obj
          Debug\PSO.obj
          Debug\Source.obj
-         PSO.vcxproj -> D:\CIS\Projects\PSO\ParticleSwarmOpt\Debug\PSO.exe
-     1>Done Building Project "D:\CIS\Projects\PSO\ParticleSwarmOpt\PSO\PSO.vcxproj" (Build target(s)).
+         PSO.vcxproj -> D:\CIS\Projects\PSO\ParticleSwarmOpt-master\Debug\PSO.exe
+     1>Done Building Project "D:\CIS\Projects\PSO\ParticleSwarmOpt-master\PSO\PSO.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.03
+Time Elapsed 00:00:05.06

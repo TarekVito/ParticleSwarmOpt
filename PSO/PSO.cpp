@@ -6,23 +6,23 @@
 #include"PSO.h"
 
 using namespace std;
-
+vector<Particle*> PSO::particles;
 PSO::PSO(int NoParticles, int numberOfFeatures, ParticleType type)
 {
-	
-	for (int i = 0; i < NoParticles; ++i)
+	switch (type)
 	{
-		switch (type)
-		{
-		case Default:
+	case Default:
+		for (int i = 0; i < NoParticles; ++i)
 			particles.push_back(new ParticleSinTest(numberOfFeatures));
-			break;
-		default:
-			return;
-		}
+		break;
+	default:
+		return;
 	}
 }
-
+vector<Particle*> PSO::getParticles()
+{
+	return particles;
+}
 float PSO::getDistance(Particle* p1, Particle* p2)
 {
 	vector<float> pF1 = p1->getFeatures();
@@ -37,15 +37,15 @@ float PSO::getDistance(Particle* p1, Particle* p2)
 pair<vector<float>&, float> PSO::getGlobalBest()
 {
 	int NoParticles = particles.size();
-	float curMin = numeric_limits<float>::min();
+	float curMax= numeric_limits<float>::min();
 	int bestIdx = -1;
 	for (int i = 0; i < NoParticles; ++i)
 	{
 		float curFittness = particles[i]->getPBest(true)->updateFittness()->getFittnessVal();
-		if (curFittness > curMin)
-			curMin = curFittness, bestIdx = i;
+		if (curFittness > curMax)
+			curMax = curFittness, bestIdx = i;
 	}
-	return pair<vector<float>&, float>(particles[bestIdx]->getFeatures(), particles[bestIdx]->getFittnessVal());
+	return pair<vector<float>&, float>(particles[bestIdx]->getFeatures(), particles[bestIdx]->updateFittness()->getFittnessVal());
 }
 pair<vector<float>&, float> PSO::getLocalBest(int pIdx, int NoNeighbors)
 {
@@ -62,15 +62,15 @@ pair<vector<float>&, float> PSO::getLocalBest(int pIdx, int NoNeighbors)
 	});
 	
 	vector<float> lBest;
-	float curMin = numeric_limits<float>::min();
+	float curMax = numeric_limits<float>::min();
 	int bestIdx = -1;
 	for (int i = 0; i < NoNeighbors; ++i)
 	{
-		float curFittness = particles[dists[i].first]->getPBest(false)->updateFittness()->getFittnessVal();
-		if (curFittness > curMin)
-			curMin = curFittness, bestIdx = i;
+		float curFittness = particles[dists[i+1].first]->getPBest(false)->updateFittness()->getFittnessVal();
+		if (curFittness > curMax)
+			curMax = curFittness, bestIdx = i;
 	}
-	return pair<vector<float>&, float>(particles[bestIdx]->getFeatures(), particles[bestIdx]->getFittnessVal());
+	return pair<vector<float>&, float>(particles[bestIdx]->getFeatures(), particles[bestIdx]->updateFittness()->getFittnessVal());
 }
 
 
