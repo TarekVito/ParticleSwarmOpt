@@ -25,14 +25,8 @@ public:
 	vector<float>& getFeatures();
 	float getFittnessVal();
 	float linearDecay(float s,float e,float N,float i);
-	float getDiversity();
 
 	virtual void Particle::update(vector<float>& gBest, vector<float>& lBest, PSO_AlgorithmParam* psoAlg) = 0;
-	//virtual void update(vector<float>& gBest, vector<float>& lBest = vector<float>(), float w = 1, float c1 = 1, float  c2 = 1, float  cN = 1)=0;
-	//virtual void updateDWPSO(vector<float>& gbest, vector<float>& lbest = vector<float>(), float ws = 1, float we = 1, float c1 = 1, float  c2 = 1, float  cn = 1);
-	//virtual void updateTVACPSO(vector<float>& gbest, vector<float>& lbest = vector<float>(), float ws = 1, float we = 1,
-	//	float c1s = 1, float  c2s = 1, float c1e = 1, float  c2e = 1, float  cn = 1);
-	//void updateRPSO(vector<float>& gbest, float dlow, float dhigh, vector<float>& lbest = vector<float>(), float w = 1, float c1 = 1, float  c2 = 1, float  cn = 1);
 	virtual Particle* updateFittness() = 0; //return this
 	
 };

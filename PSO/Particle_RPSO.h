@@ -3,6 +3,7 @@
 #include<vector>
 #include"Particle.h"
 #include"PSO_RPSO.h"
+#include"PSO.h"
 using namespace std;
 
 class Particle_RPSO : public Particle
@@ -39,7 +40,28 @@ public:
 		}
 	}
 	virtual Particle* updateFittness() = 0; //return this
-
+	float getDiversity()
+	{
+		vector<Particle*> particles = PSO::getParticles();
+		int NOfFeatures = features.size();
+		float NOfParticles = particles.size();
+		vector<float> meanP;
+		for (int i = 0; i < NOfFeatures; ++i){
+			float meanI = 0;
+			for (int j = 0; j <NOfParticles; ++j)
+				meanI += particles[j]->getFeatures()[i];
+			meanP.push_back(meanI / NOfParticles);
+		}
+		float sumSq = 0;
+		for (int i = 0; i <NOfParticles; ++i)
+		{
+			float subSum = 0;
+			for (int j = 0; j < NOfFeatures; ++j)
+				subSum += (particles[i]->getFeatures()[j] - meanP[j])*(particles[i]->getFeatures()[j] - meanP[j]);
+			sumSq += sqrt(subSum);
+		}
+		return 0;// sumSq;
+	}
 };
 
 #endif
