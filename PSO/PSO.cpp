@@ -83,8 +83,41 @@ bool PSO::checkConstraint(float minChangeDistance, float prev, float now, float 
 	return false;
 }
 
-const vector<float>& PSO::optimize(int NoIterations , float minChangeDistance, float targetValue ,
-	float targetValError , int LocalNoNeighbors , float c1 , float c2 )
+//const vector<float>& PSO::optimize(int NoIterations, float minChangeDistance, float targetValue,
+//	float targetValError, int LocalNoNeighbors, float c1, float c2)
+//{
+//	int NoParticles = particles.size();
+//
+//	float oldFittnessVal = particles[0]->updateFittness()->getFittnessVal();
+//	ofstream *myfile = new ofstream();
+//	myfile->open("result.txt", ios::out);
+//	pair<vector<float>, float> gBest;
+//	for (int i = 0; i < NoIterations; ++i)
+//	{
+//		gBest = getGlobalBest();
+//		//(*myfile)<< "!"<<endl;
+//		//writeToFile(gBest.first, myfile);
+//		//(*myfile) << "#" << endl;
+//
+//		if (checkConstraint(minChangeDistance, oldFittnessVal, gBest.second, targetValue, targetValError))
+//			break;
+//		int NoParticles = particles.size();
+//		for (int i = 0; i < NoParticles; ++i)
+//		{
+//			pair<vector<float>&, float> lBest = getLocalBest(i, LocalNoNeighbors);
+//			writeToFile(particles[i]->getFeatures(), myfile);
+//			particles[i]->update(gBest.first, lBest.first, c1, c2);
+//		}
+//	}
+//	//(*myfile) << "$" << endl;
+//
+//	//writeToFile(gBest.first, myfile);
+//	myfile->close();
+//	return gBest.first;
+//}
+
+const vector<float>& PSO::optimize(PSO_AlgorithmParam* psoAlg, int NoIterations,
+	float minChangeDistance, float targetValue, float targetValError, int LocalNoNeighbors)
 {
 	int NoParticles = particles.size();
 	
@@ -106,7 +139,7 @@ const vector<float>& PSO::optimize(int NoIterations , float minChangeDistance, f
 		{
 			pair<vector<float>&, float> lBest = getLocalBest(i, LocalNoNeighbors);
 			writeToFile(particles[i]->getFeatures(), myfile);
-			particles[i]->update(gBest.first, lBest.first, c1, c2);
+			particles[i]->update(gBest.first,lBest.first,psoAlg);
 		}
 	}
 	//(*myfile) << "$" << endl;

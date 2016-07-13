@@ -3,6 +3,7 @@
 
 #include<vector>
 #include"Particle.h"
+#include"PSO_AlgorithmParam.h"
 #include <fstream>
 
 using namespace std;
@@ -19,8 +20,10 @@ private:
 public:
 	static vector<Particle*> getParticles();
 	PSO(int NoParticles, int numberOfFeatures, ParticleType type);
-	const vector<float>& optimize(int NoIterations = numeric_limits<int>::max(), float minChangeDistance = 0, float targetValue = numeric_limits<float>::max(),
-		float targetValError = 0, int LocalNoNeighbors = 0, float c1 = 1, float c2 = 1);
+	/*const vector<float>& optimize(int NoIterations = numeric_limits<int>::max(), float minChangeDistance = 0, float targetValue = numeric_limits<float>::max(),
+		float targetValError = 0, int LocalNoNeighbors = 0, float c1 = 1, float c2 = 1);*/
+	const vector<float>& optimize(PSO_AlgorithmParam* psoAlg, int NoIterations = numeric_limits<int>::max(), float minChangeDistance = 0, float targetValue = numeric_limits<float>::max(),
+		float targetValError = 0, int LocalNoNeighbors = 0);
 };
 
 #endif
